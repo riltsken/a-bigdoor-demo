@@ -1,3 +1,4 @@
 Django
 bigdoorkit
 
+git+https://github.com/mdiep/django-twitter-users.git

@@ -1,3 +1,5 @@
 *.pyc
 local_settings.py
 databases.py
+/static/
+demo/database

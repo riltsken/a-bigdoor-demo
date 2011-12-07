@@ -18,11 +18,12 @@ USE_L10N = True
 
 MEDIA_ROOT = ''
 MEDIA_URL = ''
-STATIC_ROOT = ''
+STATIC_ROOT = '/home/sam/dev/bigdoor_demo/static/'
 STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 STATICFILES_DIRS = (
+	'/home/sam/dev/bigdoor_demo/devstatic/',
 )
 
 STATICFILES_FINDERS = (
@@ -46,6 +47,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'demo.urls'
 
 TEMPLATE_DIRS = (
+	'/home/sam/dev/bigdoor_demo/demo/templates/'
 )
 
 INSTALLED_APPS = (
