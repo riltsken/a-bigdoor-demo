@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block page_title %}Home{% endblock page_title %}
+{% block body %}
+{% if not user.is_authenticated %}
+{% include 'login.html' %}
+{% else %}
+<div class="row">
+	<div class="span4">
+		<h2>Level  </h2>
+		<h3>XP </h3>
+		<h3>Recent tasks</h3>
+		{% if recent_tasks %}
+		<ul>
+			{% for t in recent_tasks %}
+			<li>{{ t }}</li>
+			{% endfor %}
+		</ul>
+		{% else %}
+		<p>Better get started or you will be fired for being a slacker!<p>
+		{% endif %}
+	</div>
+	<div class="span12">
+		<form>
+			<fieldset>
+				<div class="actions">
+					<input type="submit" class="btn primary" value="Submit tasks!">
+				</div>
+			</fieldset>
+		</form>
+		
+	</div>
+</div>
+{% endif %}
+{% endblock body %}
+

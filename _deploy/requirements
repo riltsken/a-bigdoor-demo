@@ -1,4 +1,9 @@
 Django
+gunicorn
 bigdoorkit
 
-git+https://github.com/mdiep/django-twitter-users.git
+twython
+oauth2
+simplejson
+
+git+http://github.com/zandeez/twython-django.git

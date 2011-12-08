@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>BigDoor Demo : {% block page_title %}Untitled Page{% endblock page_title %}</title>
+		{% block styling %}
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
+		<link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+		{% endblock styling %}
+	</head>
+	<body>
+		<div class="topbar">
+			<div class="topbar-inner">
+				<div class="container">
+					<h3><a href="{% url home %}">Bigdoor Demo</a></h3>
+					<ul>
+						<li><a href="{% url about %}">About</a></li>
+					</ul>
+					<ul style="float:right;">
+						{% if user.is_authenticated %}
+						<li class="profile_img"><img src="{{ profile_image_url }}" / alt="{{ user.username }}'s profile image"></li>
+						<li><p id="username_top">{{ user }}<p></li>
+						<li><a href="{% url twitter_logout %}">Logout from twitter</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="main-content">
+				{% include "messages.html" %}
+				{% block extra_alerts %}{% endblock extra_alerts %}
+				{% block body %}
+				<div class="hero-unit">
+					<h1>Base Template</h1>
+					<p>I really hope this isn't on live...</p>
+				</div>
+				{% endblock body %}
+			</div>
+			<div class="footer-pusher"></div>
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<p class="center">Hi Cloudspace!</p>
+			</div>
+		</footer>
+
+	</body>
+</html>

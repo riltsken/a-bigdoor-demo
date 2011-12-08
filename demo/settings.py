@@ -18,7 +18,7 @@ USE_L10N = True
 
 MEDIA_ROOT = ''
 MEDIA_URL = ''
-STATIC_ROOT = '/home/sam/dev/bigdoor_demo/static/'
+STATIC_ROOT = '/home/live/bigdoor/static/'
 STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
@@ -44,6 +44,16 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+	"django.contrib.auth.context_processors.auth",
+	"django.core.context_processors.debug",
+	"django.core.context_processors.i18n",
+	"django.core.context_processors.media",
+	"django.core.context_processors.static",
+	"django.contrib.messages.context_processors.messages",
+	"demo.context_processors.profile_image"
+)
+
 ROOT_URLCONF = 'demo.urls'
 
 TEMPLATE_DIRS = (
@@ -58,6 +68,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+
+	'twython_django_oauth',
+
+	'base',
+	'point',
+	'task'
 )
 
 LOGGING = {
@@ -77,3 +93,8 @@ LOGGING = {
         },
     }
 }
+
+LOGIN_URL = '/twitter/login'
+LOGOUT_URL = '/twitter/logout'
+LOGIN_REDIRECT_URL = '/points/login/'
+LOGOUT_REDIRECT_URL= '/'
