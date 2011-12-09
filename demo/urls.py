@@ -8,6 +8,6 @@ urlpatterns = patterns('',
     (r'^',					include('demo.base.urls')),
     (r'^',					include('demo.task.urls')),
 	(r'^twitter/',			include('twython_django_oauth.urls')),
-	(r'^points/',			include('points.urls')),
+	(r'^points/',			include('point.urls')),
     url(r'^admin/',			include(admin.site.urls)),
 ) + staticfiles_urlpatterns()

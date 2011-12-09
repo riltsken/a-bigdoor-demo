@@ -1,7 +1,7 @@
 import twython
 from django.conf import settings
 
-def get_profile_image(size="mini"):
+def get_profile_image(user,size="mini"):
 	twitter_profile = user.twitterprofile
 	auth = {
 		'twitter_token': settings.TWITTER_KEY,
