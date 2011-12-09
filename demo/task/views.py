@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.forms.models import modelformset_factory
+from django.core.urlresolvers import reverse
 
 from demo.task.models import UserTask
 from demo.point import helpers as point_helpers
@@ -13,7 +14,7 @@ def home(request):
 		context['task_formset'] = task_formset
 
 		if request.POST and task_formset.is_valid():
-			instances = worklog_formset.save(commit=False)
+			instances = task_formset.save(commit=False)
 
 			for i in instances:
 				i.user = request.user

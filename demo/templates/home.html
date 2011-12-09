@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
+{% load base_tags %}
 {% block page_title %}Home{% endblock page_title %}
 {% block scripts %}
 {{ block.super }}
+<script type="text/javascript" src="{{STATIC_URL}}js/jquery.sparkline.min.js"></script>
 <script type="text/javascript" src="{{STATIC_URL}}js/functions.js"></script>
+<script type="text/javascript">
 $(document).ready(function(){
+	// Generate the graphic for our level xp-to-next-level meter
+	$('.inlinesparkline').sparkline('html', {type: 'bullet', targetColor: '#61E653', performanceColor: '#558C41', targetWidth: 12, height: 35});
+
+	// Manage the addition of new tasks through a generic add button method
 	manage_form = new multiform();
-	manage_form.addAnother("task","add-another-task");
+	manage_form.addAnother("task","#add-another-task");
 });
+</script>
 {% endblock scripts%}
 {% block body %}
 {% if not user.is_authenticated %}
@@ -14,8 +22,7 @@ $(document).ready(function(){
 {% else %}
 <div class="row">
 	<div class="span4">
-		<h2>Level  </h2>
-		<h3>XP </h3>
+		{% render_level %}
 		<h3>Recent tasks</h3>
 		{% if recent_tasks %}
 		<ul>
@@ -28,10 +35,10 @@ $(document).ready(function(){
 		{% endif %}
 	</div>
 	<div class="span12">
-		<form>{% csrf_token %}
+		<form action="." method="POST">{% csrf_token %}
 		{{ task_formset.management_form }}
 			<fieldset>
-				<div id="add-another-task"></div>
+				<div id="add-another-task" class="span2"><input type="button" class="btn success" name="Add Task" value="Add Another Task"></div>
 				{% for form in task_formset %}
 				<div id="task-form-{{ forloop.counter0 }}">
 					{{ form.as_p }}

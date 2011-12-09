@@ -15,14 +15,14 @@
 		<div class="topbar">
 			<div class="topbar-inner">
 				<div class="container">
-					<h3><a href="{% url home %}">Bigdoor Demo</a></h3>
+					<h3><a href="{% url home %}">BigDoor Demo</a></h3>
 					<ul>
 						<li><a href="{% url about %}">About</a></li>
 					</ul>
 					<ul style="float:right;">
 						{% if user.is_authenticated %}
-						<li class="profile_img"><img src="{{ profile_image_url }}" / alt="{{ user.username }}'s profile image"></li>
-						<li><p id="username_top">{{ user }}<p></li>
+						<li class="profile-img"><img src="{{ profile_image_url }}" / alt="{{ user.username }}'s profile image"></li>
+						<li><p id="username-top">{{ user }}<p></li>
 						<li><a href="{% url twitter_logout %}">Logout from twitter</a></li>
 						{% endif %}
 					</ul>

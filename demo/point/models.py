@@ -14,3 +14,6 @@ class Level(BigDoorModel):
 
 class Award(BigDoorModel):
 	pass
+
+class Transaction(BigDoorModel):
+	pass
