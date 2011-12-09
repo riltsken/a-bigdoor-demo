@@ -1,7 +1,5 @@
-{% if messages %}
 {% for message in messages %}
 <div class="alert-message {{ message.tags }}">
-	{{ message.tags|capfirst }}: {{ message|safe }}
+	<span class="bold">{{ message.tags|capfirst }}</span> {{ message|safe }}
 </div>
 {% endfor %}
-{% endif %}

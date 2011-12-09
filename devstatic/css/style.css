@@ -20,8 +20,16 @@ html, body {
 	text-align: center;
 }
 
+.bold {
+	font-weight:bold;
+}
+
 .push-top {
 	margin-top: 40px;
+}
+
+.box {
+	border: 1px solid #DDD;
 }
 
 #username-top {
@@ -50,15 +58,17 @@ html, body {
 
 /* FORM STUFF */
 
-.field-error {
-	font-weight: bold;
-	color: red;
-	text-shadow: 1px 1px 0 white;
+form	{
+	margin-bottom: 0px;
+}
+form	fieldset	{
+	margin-bottom: 0px;
+	margin-left: 10px;
 }
 form	fieldset	div	{
-	float:left;
-	width:700px;
-	margin-top:20px;
+	float: left;
+	width: 600px;
+	margin-top: 20px;
 }
 form	p	{
 	display:inline;
@@ -69,11 +79,11 @@ form	p	label	{
 	display:block;
 	float:none;
 	text-align:left;
+	font-weight:bold;
 }
 form	div.actions	{
-	margin-top:80px;
-	padding: 17px 20px 18px 20px;
-	clear:both;
+	padding: 17px 0px 18px 20px;
+	margin: 80px 0px 0px 0px;
 }
 form	ul.errorlist	{
 	list-style-type:none;

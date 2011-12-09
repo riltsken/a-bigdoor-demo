@@ -1,0 +1,66 @@
+[
+    {
+        "pk": 1,
+        "model": "point.award",
+        "fields": {
+            "name": "about_page",
+            "bd_id": "87427"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "point.transaction",
+        "fields": {
+            "name": "checkin",
+            "bd_id": "722368"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "point.transaction",
+        "fields": {
+            "name": "xp",
+            "bd_id": "722364"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "point.transaction",
+        "fields": {
+            "name": "email_xp",
+            "bd_id": "725238"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "point.transaction",
+        "fields": {
+            "name": "coding_xp",
+            "bd_id": "725237"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "point.transaction",
+        "fields": {
+            "name": "meeting_xp",
+            "bd_id": "725236"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "point.transaction",
+        "fields": {
+            "name": "designing_xp",
+            "bd_id": "725235"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "point.transaction",
+        "fields": {
+            "name": "phone_xp",
+            "bd_id": "725234"
+        }
+    }
+]

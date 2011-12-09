@@ -34,7 +34,7 @@ $(document).ready(function(){
 		<p>Better get started or you will be fired for being a slacker!<p>
 		{% endif %}
 	</div>
-	<div class="span12">
+	<div class="span11 box">
 		<form action="." method="POST">{% csrf_token %}
 		{{ task_formset.management_form }}
 			<fieldset>
@@ -44,10 +44,10 @@ $(document).ready(function(){
 					{{ form.as_p }}
 				</div>
 				{% endfor %}
-				<div class="actions">
-					<input type="submit" class="btn primary" value="Submit tasks!">
-				</div>
 			</fieldset>
+			<div class="actions">
+				<input type="submit" class="btn primary" value="Submit tasks!">
+			</div>
 		</form>
 		
 	</div>

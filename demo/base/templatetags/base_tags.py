@@ -26,9 +26,8 @@ def render_level(context):
 
 	extra_context['xp'] = 0
 	for currency in summary[0]['currency_balances']:
-		if currency['end_user_title'] == 'xp':
+		if currency['end_user_title'] == 'XP':
 			extra_context['xp'] =  currency['current_balance']
-
 
 	return extra_context
 
