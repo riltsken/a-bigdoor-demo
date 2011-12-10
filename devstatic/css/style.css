@@ -167,3 +167,15 @@ a.sign-in-link {
 	margin:8px 5px 0px 0px;
 }
 
+/* AWARD LISTINGS FOR A USER */
+
+ul#award-list	{
+	list-style-type:none;
+}
+
+ul#award-list li	{
+	float:left;
+	padding:0px 35px 0px 35px;
+	margin-top:20px;
+	text-align:center;
+}

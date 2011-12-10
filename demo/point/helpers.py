@@ -17,17 +17,25 @@ class BigDoorClient(object):
 class AwardAssigner(BigDoorClient):
 	def __init__(self,award,*args,**kwargs):
 		super(AwardAssigner,self).__init__(*args,**kwargs)
-		self.award_id = self.get_award()
+		self.award_id = self.get_award(award)
 
-	def get_award(self):
-		return pmodels.Award.objects.get(name=self.award).bd_id
+	def get_award(self,award):
+		return pmodels.Award.objects.get(name=award).bd_id
+
+	def has_award(self):
+		endpoint = 'end_user/%s/award' % self.username
+		awards = self.api.get(endpoint)
+		for award in awards[0]:
+			if award['named_award_id'] == self.award_id:
+				return True
+
+		return False
 
 	def grant_award(self):
-		endpoint = 'end_user/%s/award/%s' % (self.award_id,self.username)
-		return self.api.post(endpoint)
+		endpoint = 'end_user/%s/award' % self.username
+		return self.api.post(endpoint, {}, {'named_award_id': self.award_id})
 
 class PointAssigner(BigDoorClient):
-
 	def __init__(self,transaction,*args,**kwargs):
 		super(PointAssigner,self).__init__(*args,**kwargs)
 		self.transaction_id = self.get_transaction(transaction)

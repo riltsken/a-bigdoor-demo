@@ -23,6 +23,7 @@
 						{% if user.is_authenticated %}
 						<li class="profile-img"><img src="{{ profile_image_url }}" / alt="{{ user.username }}'s profile image"></li>
 						<li><p id="username-top">{{ user }}<p></li>
+						<li><a href="{% url point_awards %}">My awards</a></li>
 						<li><a href="{% url twitter_logout %}">Logout from twitter</a></li>
 						{% endif %}
 					</ul>

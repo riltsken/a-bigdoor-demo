@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block page_title %}Awards for {{ user }}{% endblock page_title %}
+{% block body %}
+<ul id="award-list">
+{% for award in awards %}
+	<li>
+		<img src="{{ award.urls.0.url }}" alt="Award image">
+		<p>{{ award.end_user_description }}</p>
+	</li>
+{% endfor %}
+</ul>
+{% endblock body %}
