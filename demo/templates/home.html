@@ -25,7 +25,7 @@ $(document).ready(function(){
 		{% render_level %}
 		<h3>Recent tasks</h3>
 		{% if recent_tasks %}
-		<ul>
+		<ul id="recent-tasks">
 			{% for t in recent_tasks %}
 			<li>{{ t }}</li>
 			{% endfor %}

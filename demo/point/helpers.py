@@ -36,14 +36,23 @@ class AwardAssigner(BigDoorClient):
 		return self.api.post(endpoint, {}, {'named_award_id': self.award_id})
 
 class PointAssigner(BigDoorClient):
-	def __init__(self,transaction,*args,**kwargs):
-		super(PointAssigner,self).__init__(*args,**kwargs)
-		self.transaction_id = self.get_transaction(transaction)
+	def __init__(self,username,transaction=None,*args,**kwargs):
+		super(PointAssigner,self).__init__(username,*args,**kwargs)
+		self.transaction_id = None
+		if transaction:
+			self.transaction_id = self.get_transaction(transaction)
 
 	def get_transaction(self,transaction):
 		return pmodels.Transaction.objects.get(name=transaction).bd_id
 
-	def grant_points(self):
-		endpoint = 'named_transaction_group/%s/execute/%s' % (self.transaction_id,self.username)
+	def grant_points(self,amount=None,transaction_id=None):
+		tid = transaction_id or self.transaction_id
+
+		# sanity check
+		assert tid is not None
+
+		endpoint = 'named_transaction_group/%s/execute/%s' % (tid,self.username)
+		if amount:
+			return self.api.post(endpoint,{},{'amount': amount})
 		return self.api.post(endpoint)
 

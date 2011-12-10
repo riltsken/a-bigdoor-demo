@@ -4,6 +4,10 @@ html, body {
 	height: 100%;
 }
 
+ul	{
+	list-style-type:none;
+}
+
 /* LAYOUT STUFF */
 
 .main-content {
@@ -169,13 +173,17 @@ a.sign-in-link {
 
 /* AWARD LISTINGS FOR A USER */
 
-ul#award-list	{
-	list-style-type:none;
-}
-
 ul#award-list li	{
 	float:left;
 	padding:0px 35px 0px 35px;
 	margin-top:20px;
 	text-align:center;
+}
+
+/* RECENT TASK LIST */
+ul#recent-tasks	{
+	margin:0px;
+}
+ul#recent-tasks	li	{
+	margin-top:10px;
 }
