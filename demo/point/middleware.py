@@ -13,7 +13,7 @@ class DailyCheckIn(object):
 	def process_request(self,request):
 		if request.user.is_authenticated():
 			if not request.session.get('last_check_in') or (request.session.get('last_check_in') < datetime.now() - timedelta(days=1)):
-				checkin = PointAssigner('checkin',request.user.username)
+				checkin = PointAssigner(request.user.username,'checkin')
 				try:
 					status_code = checkin.grant_points()
 					messages.info(request, "You just got points for checking in today!")

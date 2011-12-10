@@ -15,8 +15,8 @@ class BigDoorClient(object):
 		self.username = username
 
 class AwardAssigner(BigDoorClient):
-	def __init__(self,award,*args,**kwargs):
-		super(AwardAssigner,self).__init__(*args,**kwargs)
+	def __init__(self,username,award,*args,**kwargs):
+		super(AwardAssigner,self).__init__(username,*args,**kwargs)
 		self.award_id = self.get_award(award)
 
 	def get_award(self,award):
