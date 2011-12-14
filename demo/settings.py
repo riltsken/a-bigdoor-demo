@@ -23,7 +23,7 @@ STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 STATICFILES_DIRS = (
-	'/home/sam/dev/bigdoor_demo/devstatic/',
+    '/home/sam/dev/bigdoor_demo/devstatic/',
 )
 
 STATICFILES_FINDERS = (
@@ -41,24 +41,25 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-	'demo.point.middleware.DailyCheckIn',
+    'demo.point.middleware.DailyCheckIn',
     'django.contrib.messages.middleware.MessageMiddleware',
+	'demo.middleware.BigDoorParseError'
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-	"django.contrib.auth.context_processors.auth",
-	"django.core.context_processors.debug",
-	"django.core.context_processors.i18n",
-	"django.core.context_processors.media",
-	"django.core.context_processors.static",
-	"django.contrib.messages.context_processors.messages",
-	"demo.context_processors.profile_image"
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.contrib.messages.context_processors.messages',
+    'demo.context_processors.profile_image'
 )
 
 ROOT_URLCONF = 'demo.urls'
 
 TEMPLATE_DIRS = (
-	'/home/sam/dev/bigdoor_demo/demo/templates/'
+    '/home/sam/dev/bigdoor_demo/demo/templates/'
 )
 
 INSTALLED_APPS = (
@@ -70,11 +71,11 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
 
-	'twython_django_oauth',
+    'twython_django_oauth',
 
-	'base',
-	'point',
-	'task'
+    'base',
+    'point',
+    'task'
 )
 
 LOGGING = {

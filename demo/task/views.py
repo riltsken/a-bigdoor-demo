@@ -13,7 +13,7 @@ def home(request):
 		TaskFormSet = modelformset_factory(UserTask,fields=['task','length'])
 		task_formset = TaskFormSet(request.POST or None,queryset=UserTask.objects.none())
 		context['task_formset'] = task_formset
-		context['recent_tasks'] = UserTask.objects.filter(user=request.user).select_related('task','user').order_by('timestamp','-pk')[:8]
+		context['recent_tasks'] = UserTask.objects.filter(user=request.user).select_related('task','user').order_by('-timestamp','-pk')[:8]
 
 		if request.POST and task_formset.is_valid():
 

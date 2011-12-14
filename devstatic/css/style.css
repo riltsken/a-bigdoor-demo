@@ -180,6 +180,10 @@ ul#award-list li	{
 	text-align:center;
 }
 
+ul#award-list li p {
+	width: 130px;
+}
+
 /* RECENT TASK LIST */
 ul#recent-tasks	{
 	margin:0px;
