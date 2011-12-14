@@ -6,6 +6,9 @@ PARSE_ERRORS = [
 "Caught ValueError while rendering: No JSON object could be decoded",
 ]
 
+""" Having some issues where restkit can't read a response or BigDoor isn't responding.
+	This is kind of a catch-all tag for that.
+"""
 class BigDoorParseError(object):
 
 	def process_exception(self, request, exception):

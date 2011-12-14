@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load base_tags %}
-{% block page_title %}Home{% endblock page_title %}
+{% block page_title %}{% if user.is_authenticated %}Welcome back, {{ user }}{% else %}Sign-In{% endif %}{% endblock page_title %}
 {% block scripts %}
 {{ block.super }}
 <script type="text/javascript" src="{{STATIC_URL}}js/jquery.sparkline.min.js"></script>

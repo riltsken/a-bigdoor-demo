@@ -6,6 +6,8 @@ from demo.base import helpers as bhelpers
 from demo.point import helpers as phelpers
 from demo.point import models as pmodels
 
+""" Get an award for reading the about page :)
+"""
 def about(request):
 	context = {}
 	if request.user.is_authenticated():
@@ -15,6 +17,8 @@ def about(request):
 			messages.info(request, "You just got an award for checking out this page!")
 	return render(request,'about.html',context)
 
+""" Show the leaderboard based on user XP
+"""
 def leaderboard(request):
 	client = phelpers.BigDoorClient(request.user.username)
 	leaderboard = client.api.get('leaderboard/execute',{'filter_value': pmodels.Currency.objects.get(name='xp').bd_id})

@@ -3,6 +3,8 @@ from django.conf import settings
 import twython
 from twython_django_oauth.models import TwitterProfile
 
+""" A helper method to grab the url of a twitter profile image
+"""
 def get_profile_image(user,size="mini"):
 	try:
 		twitter_profile = user.twitterprofile

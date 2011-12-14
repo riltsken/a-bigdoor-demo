@@ -5,6 +5,9 @@ from django.conf import settings
 
 from bigdoorkit import client
 
+""" Whenever a user is created via twitter we create
+	a bigdoor user as well
+"""
 @receiver(models.signals.post_save, sender=User)
 def create_bigdoor_user(sender, **kwargs):
 	if kwargs['created']:

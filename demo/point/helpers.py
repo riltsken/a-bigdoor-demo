@@ -4,6 +4,8 @@ from bigdoorkit import client
 
 from demo.point import models as pmodels
 
+""" Generic way for distributing points or awards to users
+"""
 class BigDoorClient(object):
 	auth = [
 		settings.BIGDOOR_SECRET_KEY,

@@ -11,6 +11,11 @@ from demo.base import helpers as bhelpers
 
 register = template.Library()
 
+""" Template tag for outputting...
+	Level
+	XP
+	jQuery sparkline for progress
+"""
 @register.inclusion_tag('level.html',takes_context=True)
 def render_level(context):
 	extra_context = {}
