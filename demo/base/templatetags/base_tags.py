@@ -7,6 +7,7 @@ import simplejson
 from bigdoorkit import client
 
 from demo.point import models as point_models
+from demo.base import helpers as bhelpers
 
 register = template.Library()
 
@@ -51,4 +52,3 @@ def render_level(context):
 			extra_context['xp_bar_end'] = 100
 
 	return extra_context
-

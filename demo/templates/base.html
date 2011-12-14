@@ -17,7 +17,8 @@
 				<div class="container">
 					<h3><a href="{% url home %}">BigDoor Demo</a></h3>
 					<ul>
-						<li><a href="{% url about %}">About</a></li>
+						<li><a href="{% url base_about %}">About</a></li>
+						<li><a href="{% url base_leaderboard %}">Leaderboard</a></li>
 					</ul>
 					<ul style="float:right;">
 						{% if user.is_authenticated %}

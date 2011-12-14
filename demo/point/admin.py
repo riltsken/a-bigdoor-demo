@@ -1,7 +1,8 @@
 from django.contrib import admin
 
-from demo.point.models import Transaction,Award,Level
+from demo.point import models as pmodels
 
-admin.site.register(Transaction)
-admin.site.register(Award)
-admin.site.register(Level)
+admin.site.register(pmodels.Transaction)
+admin.site.register(pmodels.Award)
+admin.site.register(pmodels.Level)
+admin.site.register(pmodels.Currency)

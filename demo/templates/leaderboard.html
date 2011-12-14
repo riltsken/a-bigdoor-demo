@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block page_title %}Leaderboard{% endblock page_title %}
+{% block body %}
+<div class="span18 well">
+	<table>
+		<tr>
+			<th>Rank</th><th>Name</th><th>XP Points</th>
+		</tr>
+		{% for r in results %}
+		<tr>
+			<td>{{ r.0 }}</td><td> {% if r.1 %}<img src="{{ r.1 }}" />{% endif %} {{ r.2 }}</td><td>{{ r.3 }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+{% endblock body %}

@@ -15,3 +15,4 @@ def awards(request):
 	# these are awards assigned via leveling up in different categories
 	awards.extend(user[0]['level_summaries'][::-1])
 	return render(request,'point/awards.html', {'awards': awards})
+
